@@ -2,15 +2,20 @@
 
 # Requirements
 
-Gemini API - gemini-2.5-flash
-https://ai.google.dev/gemini-api/docs/pricing
+Gemini API - gemini-2.5-flash https://ai.google.dev/gemini-api/docs/pricing
 
 Until recently, Google offered generous free-tier limits on the Gemini API – including for gemini-2.5-flash, the model we recommend for this project. However, in December 2025 Google drastically lowered the free-tier rate limits, making it difficult to complete this project without hitting the limits often.
 
 It seems Gemini API pricing will continue to change frequently and without notice. We recommend, if possible, setting up a paid account with Google and using the gemini-2.5-flash model. You should accrue no more than ~$1–2 in charges during this course. Otherwise, you can still use gemini-2.5-flash on the free tier, but you'll be subject to very few requests per day
 
+create .env file from .env.dist
+
+Create a project and generate API key from https://aistudio.google.com/api-keys and add value to .env
+
 WSL2 for windows
+
 Python 3.10+
+
 The uv project/package manager [installation docs](https://docs.astral.sh/uv/getting-started/installation/)
 
 # Example
