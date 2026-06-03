@@ -16,16 +16,27 @@ The uv project/package manager [installation docs](https://docs.astral.sh/uv/get
 # Example
 
 Manually update calculator/pkg/calculator.py and change the precedence of the + operator value to 3.
+
 Run the calculator app, to make sure it's now producing incorrect results: uv run calculator/main.py "3 + 7 * 2" (this should be 17, but because we broke it, it will return 20).
 > uv run calculator/main.py "3 + 7 * 2"
+
 Run your agent and ask it, "Fix the bug: 3 + 7 * 2 shouldn't be 20."
 
 > uv run main.py "fix my calculator app, it's not starting correctly"
-# Calling function: get_files_info
-# Calling function: get_file_content
-# Calling function: write_file
-# Calling function: run_python_file
-# Calling function: write_file
-# Calling function: run_python_file
-# Final response:
-# Great! The calculator app now seems to be working correctly. The output shows the expression and the result in a formatted way.
+<br>
+<br>
+Calling function: get_files_info
+<br>
+Calling function: get_file_content
+<br>
+Calling function: write_file
+<br>
+Calling function: run_python_file
+<br>
+Calling function: write_file
+<br>
+Calling function: run_python_file
+<br>
+Final response:
+<br>
+Great! The calculator app now seems to be working correctly. The output shows the expression and the result in a formatted way.
