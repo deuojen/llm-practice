@@ -12,9 +12,16 @@ create .env file from .env.dist
 
 Create a project and generate API key from https://aistudio.google.com/api-keys and add value to .env
 
-WSL2 for windows
+WSL2 for windows  
+Python 3.10+  
+after instal WSL run those on wsl
+>sudo apt update  
+>sudo apt install -y python3
 
-Python 3.10+
+Verify the installation
+>python3 --version
+
+You should get back a valid Python 3.x version.
 
 The uv project/package manager [installation docs](https://docs.astral.sh/uv/getting-started/installation/)
 
@@ -27,21 +34,19 @@ Run the calculator app, to make sure it's now producing incorrect results: uv ru
 
 Run your agent and ask it, "Fix the bug: 3 + 7 * 2 shouldn't be 20."
 
-> uv run main.py "fix my calculator app, it's not starting correctly"
+> uv run main.py "fix my calculator app, it's not starting correctly"  
 <br>
-<br>
-Calling function: get_files_info
-<br>
-Calling function: get_file_content
-<br>
-Calling function: write_file
-<br>
-Calling function: run_python_file
-<br>
-Calling function: write_file
-<br>
-Calling function: run_python_file
-<br>
-Final response:
-<br>
+Calling function: get_files_info  
+Calling function: get_file_content  
+Calling function: write_file  
+Calling function: run_python_file  
+Calling function: write_file  
+Calling function: run_python_file  
+Final response:  
 Great! The calculator app now seems to be working correctly. The output shows the expression and the result in a formatted way.
+
+uv run main.py "can you fix bug on calculator"
+
+uv run main.py "can you add exponents functionality to calculator using caret (^) icon it should give result, example  5 ^ 3 = 125"
+
+uv run main.py "can we add logarithms and factorials to calculator, example log2(16) should give 4.0 and 5! should give 120"

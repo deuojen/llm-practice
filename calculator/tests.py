@@ -38,11 +38,56 @@ class TestCalculator(unittest.TestCase):
 
     def test_invalid_operator(self) -> None:
         with self.assertRaises(ValueError):
-            self.calculator.evaluate("$ 3 5")
+            self.calculator.evaluate("3 $ 5")
 
     def test_not_enough_operands(self) -> None:
         with self.assertRaises(ValueError):
             self.calculator.evaluate("+ 3")
+
+    def test_log2(self) -> None:
+        result = self.calculator.evaluate("log2(16)")
+        self.assertEqual(result, 4.0)
+
+    def test_factorial(self) -> None:
+        result = self.calculator.evaluate("5!")
+        self.assertEqual(result, 120)
+
+    def test_log2_with_expression(self) -> None:
+        result = self.calculator.evaluate("log2(4 * 4)")
+        self.assertEqual(result, 4.0)
+
+    def test_factorial_with_expression(self) -> None:
+        result = self.calculator.evaluate("(3 + 2)!")
+        self.assertEqual(result, 120)
+
+    def test_factorial_of_negative_number(self) -> None:
+        with self.assertRaises(ValueError):
+            self.calculator.evaluate("(-5)!")
+
+    def test_factorial_of_non_integer(self) -> None:
+        with self.assertRaises(ValueError):
+            self.calculator.evaluate("5.5!")
+
+    def test_chained_operations(self) -> None:
+        result = self.calculator.evaluate("log2(8) * 2!")
+        self.assertEqual(result, 6.0)
+
+    def test_power_operation(self) -> None:
+        result = self.calculator.evaluate("2 ^ 3")
+        self.assertEqual(result, 8)
+
+    def test_power_with_parentheses(self) -> None:
+        result = self.calculator.evaluate("(2 + 1) ^ 2")
+        self.assertEqual(result, 9)
+
+    def test_complex_expression_with_power(self) -> None:
+        result = self.calculator.evaluate("2 + 3 * 4 ^ 2 - 10 / 5")
+        self.assertEqual(result, 48)
+
+    def test_log2_invalid_input(self) -> None:
+        with self.assertRaises(ValueError):
+            self.calculator.evaluate("log2(-4)")
+
 
 
 if __name__ == "__main__":
